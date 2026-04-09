@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Crimson_Pro, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { Providers } from '@/components/query';
+import { Providers } from "../components/query";
 
 const bodyFont = Crimson_Pro({
   variable: "--font-body",
