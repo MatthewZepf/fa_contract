@@ -114,7 +114,7 @@ export default function ChatDemo() {
       onSubmit={handleSubmit}
       isLoading={isLoading}
       title="Contract Chat"
-      description="hopfully is helpful"
+      description="hopfully is helpful - Boyfie ❤️"
       placeholder="Ask something about the contract..."
     />
   )
