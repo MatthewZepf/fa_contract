@@ -1,0 +1,137 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-body: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-geist-mono);
+
+  --color-umber:  #3B2314;
+  --color-walnut: #7A4E2D;
+  --color-grain:  #C9A96E;
+  --color-brick:  #A85252;
+  --color-blush:  #D4A0A0;
+  --color-slate:  #5A7A8A;
+  --color-mist:   #B0C4CC;
+  --color-linen:  #F2E8D9;
+
+  /* Old palette — comment out above and uncomment these to swap */
+  /* --color-bark:   #5C3D2E;
+  --color-clay:   #C4845C;
+  --color-sand:   #E8D5B7;
+  --color-stone:  #A89880;
+  --color-parch:  #F7EFE0;
+  --color-ember:  #B85C38; */
+
+  --color-background:         #F2E8D9;  /* linen */
+  --color-foreground:         #3B2314;  /* umber */
+  --color-card:               #EDE0CC;
+  --color-card-foreground:    #3B2314;
+  --color-popover:            #EDE0CC;
+  --color-popover-foreground: #3B2314;
+  --color-primary:            #7A4E2D;  /* walnut */
+  --color-primary-foreground: #F2E8D9;  /* linen */
+  --color-secondary:          #5A7A8A;  /* slate */
+  --color-secondary-foreground: #F2E8D9;
+  --color-muted:              #D4A0A0;  /* blush */
+  --color-muted-foreground:   #7A4E2D;  /* walnut */
+  --color-accent:             #A85252;  /* brick */
+  --color-accent-foreground:  #F2E8D9;
+  --color-destructive:        #A85252;
+  --color-border:             #C9A96E40; /* grain at low opacity */
+  --color-input:              #C9A96E60;
+  --color-ring:               #7A4E2D;  /* walnut */
+
+  --radius: 0.625rem;
+  --radius-sm:  calc(var(--radius) * 0.6);
+  --radius-md:  calc(var(--radius) * 0.8);
+  --radius-lg:  var(--radius);
+  --radius-xl:  calc(var(--radius) * 1.4);
+}
+
+
+/*
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+umber:  '#3B2314',   // dark — espresso
+            walnut: '#7A4E2D',   // medium — saddle brown
+            grain:  '#C9A96E',   // gold/sand — dry grass
+ 
+            // Soft dusty red
+            brick:  '#A85252',   // muted earthy red
+            blush:  '#D4A0A0',   // pale red tint
+ 
+            // Soft slate blue
+            slate:  '#5A7A8A',   // warm grey-blue
+            mist:   '#B0C4CC',   // pale blue
+ 
+            // Page base
+            linen:  '#F2E8D9',   // warm off-white
+ 
+            // ── OLD PALETTE (commented out — swap back by uncommenting below and commenting above) ──
+            // bark:   { DEFAULT: '#5C3D2E', light: '#7A5140', dark: '#3B2318' },
+            // clay:   { DEFAULT: '#C4845C', light: '#D9A07A', dark: '#A3643C' },
+            // sand:   { DEFAULT: '#E8D5B7', light: '#F5ECD9', dark: '#CEBB96' },
+            // stone:  { DEFAULT: '#A89880', light: '#C2B49E', dark: '#8A7B65' },
+            // parch:  { DEFAULT: '#F7EFE0' },
+            // ember:  { DEFAULT: '#B85C38' },
+*/
+
+
+
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply bg-[#2A1608];
+  }
+  body {
+    @apply bg-background font-body text-foreground;
+  }
+}
+
+@layer components {
+  .grain-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+}
