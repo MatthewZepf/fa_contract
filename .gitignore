@@ -48,4 +48,3 @@ package-lock.json
 __pycache__/
 *.pyc
 env/
-embeddings.json
